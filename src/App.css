@@ -11,11 +11,20 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
-.logo.react:hover {
+.lapis:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+}
+.base {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.flip {
+  flex-direction: row-reverse;
 }
 
 @keyframes logo-spin {
@@ -39,4 +48,11 @@
 
 .read-the-docs {
   color: #888;
+}
+.jorgeBox {
+  color: #888;
+}
+.jorgeBox {
+  color: #61dafbaa;
+  border: 0.5px solid red;
 }
