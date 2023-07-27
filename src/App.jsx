@@ -6,14 +6,22 @@ import "./App.css";
 function App() {
   const [count, setCount] = useState(0);
   const [isLogoFlipped, FlipLogo] = useState(false);
+  const [isPromptVisible, setisPromptVisible] = useState(false);
 
   return (
     <>
-
-
-
-    <div className="MainOutsideBox">
-    <div>
+      <div className="MainOutsideBox">
+        <div
+          className={
+            "Error-Prompt" +
+            " " +
+            (isPromptVisible ? "Error-PromptAfter" : "Error-PromptBefore")
+          }
+        >
+          <p>
+            <h1>Fatal Error</h1>
+          </p>
+        </div>
 
         <div
           className={"base" + " " + (isLogoFlipped ? "flip" : "")}
@@ -23,7 +31,10 @@ function App() {
 
           <img src={reactLogo} className="logo lapis" alt="React logo" />
         </div>
+
         <h1>Vite + React</h1>
+
+        <button onClick={() => setisPromptVisible(!isPromptVisible)}></button>
 
         <div className="jorgeBox">
           <p> {navigator.userAgent} </p>
@@ -33,22 +44,8 @@ function App() {
           <button onClick={() => setCount((count) => count + 10)}>
             count is {count}
           </button>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test HMR
-          </p>
-        </div>
-        <p className="read-the-docs">
-          Click on the Vite and React logos to learn more
-        </p>
-
-        <div className = "Error-Prompt">
-          <p>
-            <h3>Fatal Error</h3>
-          </p>
         </div>
       </div>
-    </div>
-
     </>
   );
 }
